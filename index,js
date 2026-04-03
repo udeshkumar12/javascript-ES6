@@ -1,0 +1,112 @@
+// 1️ Let and Const
+let age = 20;
+age = 25;
+const name = "Udesh";
+
+// 2️ Arrow Function
+const addArrow = (a, b) => a + b;
+
+console.log(addArrow(2, 3)); 
+
+// 3️  Template Literals
+let name = "Udesh";
+let msg = `Hello ${name}, welcome!`;
+console.log(msg);
+
+// 4️ Default Parameters
+function greet(name = "Guest") {
+  console.log(`Hello ${name}`);
+}
+greet(); 
+greet("Udesh"); 
+
+// 5️  Destructuring
+// Array
+const arr = [10, 20, 30];
+const [a, b] = arr;
+console.log(a, b); 
+
+//  Object
+const user = {
+  name: "Udesh",
+  age: 22,
+};
+const { name, age } = user;
+console.log(name, age);
+
+// 6️ Spread Operator (...)
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4];
+console.log(arr2);
+
+// 7️ Rest Parameter
+function sum(...numbers) {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+console.log(sum(1, 2, 3)); 
+
+// 8️ Classes
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log(`Hello ${this.name}`);
+  }
+}
+const p1 = new Person("Udesh");
+p1.greet();
+
+// 9️ Modules (Import / Export)
+// file1.js
+export const name = "Udesh";
+// file2.js
+import { name } from "./file1.js";
+console.log(name);
+
+// 10 Promises
+const promise = new Promise((resolve, reject) => {
+  let success = true;
+  if (success) {
+    resolve("Success");
+  } else {
+    reject("Error");
+  }
+});
+promise.then((res) => console.log(res)).catch((err) => console.log(err));
+
+// 1️1️ Map and Set
+// Map;
+const map = new Map();
+map.set("name", "Udesh");
+console.log(map.get("name"));
+// Set;
+const set = new Set([1, 2, 2, 3]);
+console.log(set); 
+
+// 1️2️ for...of Loop
+const arr = [10, 20, 30];
+
+for (let value of arr) {
+  console.log(value);
+}
+
+// 13 Symbol
+const id1 = Symbol("id");
+const id2 = Symbol("id");
+console.log(id1 === id2); 
+
+// 14 Iterators
+const arr = ["a", "b", "c"];
+const iterator = arr[Symbol.iterator]();
+console.log(iterator.next()); 
+
+// 15 Generators
+function* gen() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+const g = gen();
+console.log(g.next().value);
+console.log(g.next().value);
